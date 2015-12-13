@@ -1,0 +1,1 @@
+rewrite /euro2016-calendar-ics-exporter/([A-Za-z]+).php.html /euro2016-calendar-ics-exporter/makecal.php?p=$1
