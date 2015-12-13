@@ -124,7 +124,7 @@ foreach ($outgames as $game) {
     $ev->add_property('location', $game[2]);
 
     // Start-end date
-    $date = DateTime::createFromFormat('j.m.Y G:i T', $game[1].' CET');
+    $date = DateTime::createFromFormat('j.m.Y G:i T', $game[1].' CEST');
     $ev->add_property('dtstart', gmdate('Ymd\TGis\Z', $date->getTimestamp()));
     $ev->add_property('duration', 'PT1H45M');
     $ev->add_property('dtstamp', '20151212T235601Z');
