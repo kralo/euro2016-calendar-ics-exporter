@@ -10,7 +10,7 @@ $params = explode('-', $param_in);
 // Send Headers for correct caching
 header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', strtotime('2016-06-22 22:00:00')));
 header('cache-control: public ');
-header('ETag: ' . md5('Revision2'));
+header('ETag: ' . md5('Revision3'));
 
 // headers for file downloaders
 header('Content-Type: text/calendar; charset=utf-8');
@@ -101,7 +101,7 @@ foreach ($games as $game) {
 
 $calendar = new iCalendar();
 $calendar->add_property('X-WR-CALNAME', 'EURO 2016 Schedule '.$param_in);
-$calendar->add_property('X-WR-CALDESC', 'EURO 2016 Schedule '. $param_in.'\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/');
+$calendar->add_property('X-WR-CALDESC', 'EURO 2016 Schedule '. $param_in.'\\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/');
 
 foreach ($outgames as $game) {
     $ev = new iCalendar_event();
@@ -118,7 +118,7 @@ foreach ($outgames as $game) {
 
     $ev->add_property('summary', $involved.' / '.$game[3].' / EURO 2016 France');
 
-    $ev->add_property('description', 'Game '. $game[0] .'\n'. 'source: http://www.uefa.com/uefaeuro/season=2016/matches/index.html\n\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/');
+    $ev->add_property('description', 'Game '. $game[0] .'\\n'. 'source: http://www.uefa.com/uefaeuro/season=2016/matches/index.html\\n\\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/');
 
     $ev->add_property('location', $game[2]);
 
@@ -126,7 +126,7 @@ foreach ($outgames as $game) {
     $date = DateTime::createFromFormat('j.m.Y G:i T', $game[1].' CEST');
     $ev->add_property('dtstart', gmdate('Ymd\TGis\Z', $date->getTimestamp()));
     $ev->add_property('duration', 'PT1H45M');
-    $ev->add_property('dtstamp', '20160501T235601Z');
+    $ev->add_property('dtstamp', '20160501T235602Z');
     $ev->add_property('categories', 'EURO2016-Schedule');
     $ev->add_property('TRANSP', 'TRANSPARENT');
     $calendar->add_component($ev);
