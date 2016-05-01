@@ -7,3 +7,6 @@ Two motivations drew this project
 
 - (1) showcase the possibilities of dynamic ical generation and the use of subscription for calendars
 - (2) leverare AWS CloudFront to handle the workload (and creatively pass the parameters as an html file-name).
+
+##Installation
+run `composer install` to install the sabre\vobject dependency.
