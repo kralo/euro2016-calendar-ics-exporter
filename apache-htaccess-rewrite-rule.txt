@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9-]+).php.html makecal.php?p=$1 [PT]
