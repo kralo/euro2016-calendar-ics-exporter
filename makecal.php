@@ -118,7 +118,7 @@ foreach ($outgames as $game) {
 
     $ev->add_property('summary', $involved.' / '.$game[3].' / EURO 2016 France');
 
-    $ev->add_property('description', 'Game '. $game[0] .'\\n'. 'source: http://www.uefa.com/uefaeuro/season=2016/matches/index.html\\n\\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/');
+    $ev->add_property('description', "Game ". $game[0] ."\n". "source: http://www.uefa.com/uefaeuro/season=2016/matches/index.html\n\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/");
 
     $ev->add_property('location', $game[2]);
 
