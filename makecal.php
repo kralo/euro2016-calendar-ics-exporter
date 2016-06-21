@@ -10,7 +10,7 @@ $params = explode('-', $param_in);
 // Send Headers for correct caching
 header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', strtotime('2016-06-22 22:00:00')));
 header('cache-control: public ');
-header('ETag: ' . md5('Revision4'));
+header('ETag: '.md5('Revision5'));
 
 // headers for file downloaders
 header('Content-Type: text/calendar; charset=utf-8');
@@ -54,21 +54,25 @@ $games = [
 ['34', '22.06.2016 18:00', 'Parc Olympique Lyonnais, Lyon, France', 'Group matches', 'HUN', 'POR', ['HUN'], ['POR']],
 ['35', '22.06.2016 21:00', 'Stade Pierre-Mauroy, Lille, France', 'Group matches', 'ITA', 'IRL', ['ITA'], ['IRL']],
 ['36', '22.06.2016 21:00', 'Allianz Riviera, Nice, France', 'Group matches', 'SWE', 'BEL', ['SWE'], ['BEL']],
-['37', '25.06.2016 15:00', 'Stade Geoffroy-Guichard, Saint-Etienne, France', 'Round of 16', 'SUI', 'RC', ['SUI'], ['GER', 'POL', 'NIR']],
-['38', '25.06.2016 18:00', 'Parc des Princes, Paris, France', 'Round of 16', 'WB', '3A/C/D', ['ENG', 'RUS', 'WAL', 'SVK'], ['ALB', 'GER', 'POL', 'NIR', 'ESP', 'CZE', 'TUR', 'CRO']],
-['39', '25.06.2016 21:00', 'Stade Bollaert-Delelis, Lens, France', 'Round of 16', 'WD', '3B/E/F', ['ESP', 'CZE', 'TUR', 'CRO'], ['ENG', 'RUS', 'WAL', 'SVK', 'POR', 'ISL', 'AUT', 'HUN', 'BEL', 'IRL', 'SWE']],
-['40', '26.06.2016 15:00', 'Parc Olympique Lyonnais, Lyon, France', 'Round of 16', 'FRA', '3C/D/E', ['FRA'], ['BEL', 'IRL', 'SWE', 'ESP', 'CZE', 'TUR', 'CRO', 'GER', 'POL', 'NIR']],
-['41', '26.06.2016 18:00', 'Stade Pierre-Mauroy, Lille, France', 'Round of 16', 'WC', '3A/B/F', ['GER', 'POL', 'NIR'], ['ENG', 'RUS', 'WAL', 'SVK', 'POR', 'ISL', 'AUT', 'HUN', 'ALB']],
+// round of 16
+['37', '25.06.2016 15:00', 'Stade Geoffroy-Guichard, Saint-Etienne, France', 'Round of 16', 'RA', 'RC', ['SUI'], ['POL']],
+['38', '25.06.2016 18:00', 'Parc des Princes, Paris, France', 'Round of 16', 'WB', '3A/C/D', ['WAL'], ['ALB', 'NIR', 'ESP', 'CZE', 'TUR', 'CRO']],
+['39', '25.06.2016 21:00', 'Stade Bollaert-Delelis, Lens, France', 'Round of 16', 'WD', '3B/E/F', ['ESP', 'CZE', 'TUR', 'CRO'], ['SVK', 'POR', 'ISL', 'AUT', 'HUN', 'BEL', 'IRL', 'SWE']],
+['40', '26.06.2016 15:00', 'Parc Olympique Lyonnais, Lyon, France', 'Round of 16', 'WA', '3C/D/E', ['FRA'], ['BEL', 'IRL', 'SWE', 'ESP', 'CZE', 'TUR', 'CRO', 'NIR']],
+['41', '26.06.2016 18:00', 'Stade Pierre-Mauroy, Lille, France', 'Round of 16', 'WC', '3A/B/F', ['GER'], ['SVK', 'POR', 'ISL', 'AUT', 'HUN', 'ALB']],
 ['42', '26.06.2016 21:00', 'Stadium Municipal, Toulouse, France', 'Round of 16', 'WF', 'RE', ['POR', 'ISL', 'AUT', 'HUN'], ['BEL',  'IRL', 'SWE']],
-['43', '27.06.2016 18:00', 'Stade de France, Saint-Denis, France', 'Round of 16', 'ITA', 'RD', ['ITA'], ['ESP', 'CZE', 'TUR', 'CRO']],
-['44', '27.06.2016 21:00', 'Allianz Riviera, Nice, France', 'Round of 16', 'RB', 'RF', ['ENG', 'RUS', 'WAL', 'SVK'], ['POR', 'ISL', 'AUT', 'HUN']],
-['45', '30.06.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Quarter-Finals', 'W37', 'W39', 'Z', 'Z'],
-['46', '01.07.2016 21:00', 'Stade Pierre-Mauroy, Lille, France', 'Quarter-Finals', 'W38', 'W42', 'Z', 'Z'],
-['47', '02.07.2016 21:00', 'Stade Matmut Atlantique, Bordeaux, France', 'Quarter-Finals', 'W41', 'W43', 'Z', 'Z'],
-['48', '03.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Quarter-Finals', 'W40', 'W44', 'Z', 'Z'],
-['49', '06.07.2016 21:00', 'Parc Olympique Lyonnais, Lyon, France', 'Half-Finals', 'W45', 'W46', 'Z', 'Z'],
-['50', '07.07.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Half-Finals', 'W47', 'W48', 'Z', 'Z'],
-['51', '10.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Final', 'W49', 'W50', 'Z', 'Z'],
+['43', '27.06.2016 18:00', 'Stade de France, Saint-Denis, France', 'Round of 16', 'WE', 'RD', ['ITA'], ['ESP', 'CZE', 'TUR', 'CRO']],
+['44', '27.06.2016 21:00', 'Allianz Riviera, Nice, France', 'Round of 16', 'RB', 'RF', ['ENG'], ['POR', 'ISL', 'AUT', 'HUN']],
+// QUARTER
+['45', '30.06.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Quarter-Finals', 'W37', 'W39', ['SUI', 'POL'], 'Z'],
+['46', '01.07.2016 21:00', 'Stade Pierre-Mauroy, Lille, France', 'Quarter-Finals', 'W38', 'W42', ['WAL', ''], 'Z'],
+['47', '02.07.2016 21:00', 'Stade Matmut Atlantique, Bordeaux, France', 'Quarter-Finals', 'W41', 'W43', ['GER', ''], ['ITA', '']],
+['48', '03.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Quarter-Finals', 'W40', 'W44', ['FRA', ''], ['ENG', '']],
+//HALF
+['49', '06.07.2016 21:00', 'Parc Olympique Lyonnais, Lyon, France', 'Half-Finals', 'W45', 'W46', ['SUI', 'POL'], ['WAL', '']],
+['50', '07.07.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Half-Finals', 'W47', 'W48', ['GER', 'ITA'], ['FRA', 'ENG']],
+//FINAL
+['51', '10.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Final', 'W49', 'W50', ['SUI', 'POL', 'WAL'], ['FRA', 'GER', 'ITA', 'ENG']],
 ];
 
 $outgames = array();
@@ -100,32 +104,39 @@ foreach ($games as $game) {
 // format the calendar
 $vcalendar = new VObject\Component\VCalendar();
 $vcalendar->add('X-WR-CALNAME', 'EURO 2016 Schedule '.$param_in);
-$vcalendar->add('X-WR-CALDESC', 'EURO 2016 Schedule '. $param_in."\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/");
+$vcalendar->add('X-WR-CALDESC', 'EURO 2016 Schedule '.$param_in."\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/");
 
 foreach ($outgames as $game) {
-    $vev = $vcalendar->add('VEVENT', ['UID'=>'euro2016_game'.$game[0],]);
+    $vev = $vcalendar->add('VEVENT', ['UID' => 'euro2016_game'.$game[0]]);
 
     // Summary and description; also resources
 
-    if ($game[6] != 'Z' && sizeof($game[6]) == 1 && sizeof($game[7]) == 1) {
-        $involved = $game[6][0].' - '.$game[7][0];
+    if ($game[6] != 'Z' && sizeof($game[6]) == 1) {
+        $involved = $game[6][0];
     } else {
-        $involved = $game[4].' - '.$game[5];
+        $involved = $game[4];
+    }
+    $involved .= ' - ';
+
+    if ($game[7] != 'Z' && sizeof($game[7]) == 1) {
+        $involved .= $game[7][0];
+    } else {
+        $involved .= $game[5];
     }
 
-    $vev->add('SUMMARY',$involved.' / '.$game[3].' / EURO 2016 France');
+    $vev->add('SUMMARY', $involved.' / '.$game[3].' / EURO 2016 France');
     //$ev->add_property('summary', $involved.' / '.$game[3].' / EURO 2016 France');
 
-    $vev->add('DESCRIPTION', "Game ". $game[0] ."\n". "source: http://www.uefa.com/uefaeuro/season=2016/matches/index.html\n\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/");
+    $vev->add('DESCRIPTION', 'Game '.$game[0]."\n"."source: http://www.uefa.com/uefaeuro/season=2016/matches/index.html\n\nbrought to you by http://kralo.github.io/euro2016-calendar-ics-exporter/");
     $vev->add('location', $game[2]);
 
     // Start-end date
     $date = DateTime::createFromFormat('j.m.Y G:i T', $game[1].' CEST');
-    $vev->add('DTSTART',gmdate('Ymd\TGis\Z', $date->getTimestamp()));
-    $vev->add('DURATION','PT1H45M');
+    $vev->add('DTSTART', gmdate('Ymd\TGis\Z', $date->getTimestamp()));
+    $vev->add('DURATION', 'PT1H45M');
     $vev->DTSTAMP = '20160501T235602Z';
     $vev->add('categories', 'EURO2016-Schedule');
-    $vev->add('TRANSP','TRANSPARENT');
+    $vev->add('TRANSP', 'TRANSPARENT');
 }
 
 echo $vcalendar->serialize();
