@@ -8,9 +8,9 @@ $param_in = $_GET['p'];
 $params = explode('-', $param_in);
 
 // Send Headers for correct caching
-header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', strtotime('2016-06-22 22:00:00')));
+header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', strtotime('2016-06-25 22:00:00')));
 header('cache-control: public ');
-header('ETag: '.md5('Revision5'));
+header('ETag: '.md5('xhazw8-Revision5'));
 
 // headers for file downloaders
 header('Content-Type: text/calendar; charset=utf-8');
@@ -56,23 +56,23 @@ $games = [
 ['36', '22.06.2016 21:00', 'Allianz Riviera, Nice, France', 'Group matches', 'SWE', 'BEL', ['SWE'], ['BEL']],
 // round of 16
 ['37', '25.06.2016 15:00', 'Stade Geoffroy-Guichard, Saint-Etienne, France', 'Round of 16', 'RA', 'RC', ['SUI'], ['POL']],
-['38', '25.06.2016 18:00', 'Parc des Princes, Paris, France', 'Round of 16', 'WB', '3A/C/D', ['WAL'], ['ALB', 'NIR', 'ESP', 'CZE', 'TUR', 'CRO']],
-['39', '25.06.2016 21:00', 'Stade Bollaert-Delelis, Lens, France', 'Round of 16', 'WD', '3B/E/F', ['ESP', 'CZE', 'TUR', 'CRO'], ['SVK', 'POR', 'ISL', 'AUT', 'HUN', 'BEL', 'IRL', 'SWE']],
-['40', '26.06.2016 15:00', 'Parc Olympique Lyonnais, Lyon, France', 'Round of 16', 'WA', '3C/D/E', ['FRA'], ['BEL', 'IRL', 'SWE', 'ESP', 'CZE', 'TUR', 'CRO', 'NIR']],
-['41', '26.06.2016 18:00', 'Stade Pierre-Mauroy, Lille, France', 'Round of 16', 'WC', '3A/B/F', ['GER'], ['SVK', 'POR', 'ISL', 'AUT', 'HUN', 'ALB']],
-['42', '26.06.2016 21:00', 'Stadium Municipal, Toulouse, France', 'Round of 16', 'WF', 'RE', ['POR', 'ISL', 'AUT', 'HUN'], ['BEL',  'IRL', 'SWE']],
-['43', '27.06.2016 18:00', 'Stade de France, Saint-Denis, France', 'Round of 16', 'WE', 'RD', ['ITA'], ['ESP', 'CZE', 'TUR', 'CRO']],
-['44', '27.06.2016 21:00', 'Allianz Riviera, Nice, France', 'Round of 16', 'RB', 'RF', ['ENG'], ['POR', 'ISL', 'AUT', 'HUN']],
+['38', '25.06.2016 18:00', 'Parc des Princes, Paris, France', 'Round of 16', 'WB', '3A/C/D', ['WAL'], ['NIR']],
+['39', '25.06.2016 21:00', 'Stade Bollaert-Delelis, Lens, France', 'Round of 16', 'WD', '3B/E/F', ['CRO'], ['POR']],
+['40', '26.06.2016 15:00', 'Parc Olympique Lyonnais, Lyon, France', 'Round of 16', 'WA', '3C/D/E', ['FRA'], ['IRL']],
+['41', '26.06.2016 18:00', 'Stade Pierre-Mauroy, Lille, France', 'Round of 16', 'WC', '3A/B/F', ['GER'], ['SVK']],
+['42', '26.06.2016 21:00', 'Stadium Municipal, Toulouse, France', 'Round of 16', 'WF', 'RE', ['HUN'], ['BEL']],
+['43', '27.06.2016 18:00', 'Stade de France, Saint-Denis, France', 'Round of 16', 'WE', 'RD', ['ITA'], ['ESP']],
+['44', '27.06.2016 21:00', 'Allianz Riviera, Nice, France', 'Round of 16', 'RB', 'RF', ['ENG'], ['ISL']],
 // QUARTER
-['45', '30.06.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Quarter-Finals', 'W37', 'W39', ['SUI', 'POL'], 'Z'],
-['46', '01.07.2016 21:00', 'Stade Pierre-Mauroy, Lille, France', 'Quarter-Finals', 'W38', 'W42', ['WAL', ''], 'Z'],
-['47', '02.07.2016 21:00', 'Stade Matmut Atlantique, Bordeaux, France', 'Quarter-Finals', 'W41', 'W43', ['GER', ''], ['ITA', '']],
-['48', '03.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Quarter-Finals', 'W40', 'W44', ['FRA', ''], ['ENG', '']],
+['45', '30.06.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Quarter-Finals', 'W37', 'W39', ['SUI', 'POL'], ['CRO','POR']],
+['46', '01.07.2016 21:00', 'Stade Pierre-Mauroy, Lille, France', 'Quarter-Finals', 'W38', 'W42', ['WAL', 'NIR'], ['HUN','BEL']],
+['47', '02.07.2016 21:00', 'Stade Matmut Atlantique, Bordeaux, France', 'Quarter-Finals', 'W41', 'W43', ['GER', 'SVK'], ['ITA', 'ESP']],
+['48', '03.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Quarter-Finals', 'W40', 'W44', ['FRA', 'IRL'], ['ENG', 'ISL']],
 //HALF
-['49', '06.07.2016 21:00', 'Parc Olympique Lyonnais, Lyon, France', 'Half-Finals', 'W45', 'W46', ['SUI', 'POL'], ['WAL', '']],
-['50', '07.07.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Half-Finals', 'W47', 'W48', ['GER', 'ITA'], ['FRA', 'ENG']],
+['49', '06.07.2016 21:00', 'Parc Olympique Lyonnais, Lyon, France', 'Half-Finals', 'W45', 'W46', ['SUI', 'POL', 'CRO', 'POR'], ['WAL', 'NIR', 'HUN','BEL']],
+['50', '07.07.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Half-Finals', 'W47', 'W48', ['GER', 'SVK', 'ITA', 'ESP'], ['FRA', 'IRL', 'ENG', 'ISL']],
 //FINAL
-['51', '10.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Final', 'W49', 'W50', ['SUI', 'POL', 'WAL'], ['FRA', 'GER', 'ITA', 'ENG']],
+['51', '10.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Final', 'W49', 'W50', ['SUI', 'POL', 'CRO', 'POR', 'WAL', 'NIR', 'HUN','BEL'], ['GER', 'SVK', 'ITA', 'ESP', 'FRA', 'IRL', 'ENG', 'ISL']],
 ];
 
 $outgames = array();
@@ -91,9 +91,9 @@ foreach ($games as $game) {
             $copygame = true;
         } elseif ($game[3] == 'Half-Finals' && $param == 'ALLH') {
             $copygame = true;
-        } elseif ($game[3] == 'Quarter-Finals' || $game[3] == 'Half-Finals' || $game[3] == 'Final') { // for now everyone gets the quarter/half/Final
+        }/* elseif ($game[3] == 'Quarter-Finals' || $game[3] == 'Half-Finals' || $game[3] == 'Final') { // for now everyone gets the quarter/half/Final
             $copygame = true;
-        }
+        }*/
     }
 
     if ($copygame) {
