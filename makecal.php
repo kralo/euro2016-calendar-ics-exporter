@@ -1,8 +1,12 @@
 <?php
+
 use Sabre\VObject;
 
 // error_reporting(E_ALL);
 include 'vendor/autoload.php';
+
+// for local tests only
+// parse_str(implode('&', array_slice($argv, 1)), $_GET);
 
 $param_in = $_GET['p'];
 $params = explode('-', $param_in);
@@ -69,10 +73,10 @@ $games = [
 ['47', '02.07.2016 21:00', 'Stade Matmut Atlantique, Bordeaux, France', 'Quarter-Finals', 'W41', 'W43', ['GER'], ['ITA']],
 ['48', '03.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Quarter-Finals', 'W40', 'W44', ['FRA'], ['ISL']],
 //HALF
-['49', '06.07.2016 21:00', 'Parc Olympique Lyonnais, Lyon, France', 'Half-Finals', 'W45', 'W46', ['POL', 'POR'], ['WAL', 'BEL']],
-['50', '07.07.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Half-Finals', 'W47', 'W48', ['GER', 'ITA'], ['FRA', 'ISL']],
+['49', '06.07.2016 21:00', 'Parc Olympique Lyonnais, Lyon, France', 'Half-Finals', 'W45', 'W46', ['POR'], ['WAL']],
+['50', '07.07.2016 21:00', 'Stade Vélodrome, Marseille, France', 'Half-Finals', 'W47', 'W48', ['GER'], ['FRA']],
 //FINAL
-['51', '10.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Final', 'W49', 'W50', ['POL', 'POR', 'WAL', 'BEL'], ['GER', 'ITA', 'FRA', 'ISL']],
+['51', '10.07.2016 21:00', 'Stade de France, Saint-Denis, France', 'Final', 'W49', 'W50', ['POR'], ['FRA']],
 ];
 
 $outgames = array();
