@@ -12,9 +12,15 @@ $param_in = $_GET['p'];
 $params = explode('-', $param_in);
 
 // Send Headers for correct caching
-header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', strtotime('2016-07-03 22:00:00')));
+//header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', strtotime('2016-07-03 22:00:00')));
+//header('ETag: '.md5('xhazw8-Revision6'));
+
+// make the caching more dynamic to display the "nagging" phase-out MessageFormatter
+$expiry = gmdate('D, d M Y H:i:s \G\M\T', (new DateTime())->setTime(23, 58)->getTimestamp());
+header('Expires: '.$expiry);
+header('ETag: '.md5('xhazw8-Revision7'.$expiry));
 header('cache-control: public ');
-header('ETag: '.md5('xhazw8-Revision6'));
+
 
 // headers for file downloaders
 header('Content-Type: text/calendar; charset=utf-8');
@@ -142,5 +148,21 @@ foreach ($outgames as $game) {
     $vev->add('categories', 'EURO2016-Schedule');
     $vev->add('TRANSP', 'TRANSPARENT');
 }
+
+$vev = $vcalendar->add('VEVENT');
+
+// Summary and description; also resources
+
+$vev->add('SUMMARY', 'EURO 2016 France calendar subscription phasing out');
+$vev->add('DESCRIPTION', "**Calendar is going to be deleted on 2016-08-31! Delete your subscription NOW**\n\nHey! Thank you for using my service!\nI hope it was of good use to you.\nWith the EURO being over, I will shut down this service on 2016-08-31\n".
+          "You should delete the subscription now because I don't know what your device will do once I shut it down.\nCheck out my other projects at https://github.com/kralo/");
+
+// Start-end date
+$date = new DateTime();
+$vev->add('DTSTART', gmdate('Ymd\T000000\Z', $date->getTimestamp()));
+$vev->add('DURATION', 'PT24H00M');
+$vev->DTSTAMP = gmdate('Ymd\TGis\Z', (new DateTime())->getTimestamp());
+$vev->add('categories', 'EURO2016-Schedule');
+$vev->add('TRANSP', 'TRANSPARENT');
 
 echo $vcalendar->serialize();
